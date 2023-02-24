@@ -81,7 +81,6 @@ public class DataBase extends SQLiteOpenHelper {
         }else{
             order = "ASC";
         }
-        //"select * from " + DATABASE_TABLE + "WHERE player LIKE "+ usuario +" GROUP BY score ORDER BY score DESC LIMIT 1"
         Cursor cursor = db.rawQuery("select * from " + DATABASE_TABLE + " where player LIKE '"+ usuario +"' AND game LIKE '"+ game +"' GROUP BY score ORDER BY score " + order +" LIMIT 1", null);
         if (cursor.getCount() != 0) {
             if (cursor.moveToFirst()) {

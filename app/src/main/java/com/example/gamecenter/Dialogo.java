@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.DialogFragment;
 
-public class Dialogo extends DialogFragment {//   AppCompatDialogFragment
+public class Dialogo extends DialogFragment {
     String ranking;
     int puntuacion;
     TextView txt_score;
