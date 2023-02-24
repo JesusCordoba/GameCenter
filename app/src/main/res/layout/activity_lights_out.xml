@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF8EF"
+    tools:context=".LightsOut">
+
+    <TextView
+        android:id="@+id/txt_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="LIGHTS\nOUT"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/grid"
+        app:layout_constraintEnd_toStartOf="@+id/btn_solution"
+        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527" />
+
+    <TextView
+        android:id="@+id/txt_best"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/puntuacion_drawable"
+        android:gravity="center"
+        android:text="BEST \n 0"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/new_game"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_moves"
+        android:layout_width="120dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/puntuacion_drawable"
+        android:gravity="center"
+        android:text="MOVES \n 0"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_solution"
+        app:layout_constraintEnd_toStartOf="@+id/txt_best" />
+
+    <Button
+        android:id="@+id/btn_solution"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#8F7A66"
+        android:text="Solution"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/grid"
+        app:layout_constraintEnd_toStartOf="@+id/new_game"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.729" />
+
+    <Button
+        android:id="@+id/new_game"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#8F7A66"
+        android:text="NEW GAME"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.729" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:columnCount="5"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Fila 1 -->
+        <TextView
+            android:id="@+id/btn1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+        <!--
+        android:background="@drawable/boton_redondo"
+        android:backgroundTint="@color/black"
+        -->
+
+
+        <TextView
+            android:id="@+id/btn2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn5"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+
+        <!-- Fila 2 -->
+        <TextView
+            android:id="@+id/btn6"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn7"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn8"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn9"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn10"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <!-- Fila 3 -->
+        <TextView
+            android:id="@+id/btn11"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn12"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn13"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn14"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn15"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <!-- Fila 4 -->
+        <TextView
+            android:id="@+id/btn16"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn17"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn18"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn19"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn20"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <!-- Fila 5 -->
+        <TextView
+            android:id="@+id/btn21"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn22"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn23"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn24"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/btn25"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="2dp"
+            android:textSize="50dp"
+            android:textColor="@color/yellow"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:text="" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

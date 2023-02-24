@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GameCenter</string>
+    <string name="celda"> </string>
+    <string name="new_game">NEW GAME</string>
+    <string name="score">SCORE \n 0</string>
+    <string name="best">BEST \n 0</string>
+</resources>

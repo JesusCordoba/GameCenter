@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAF8EF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="358dp"
+        android:gravity="center"
+        android:text="GAME CENTER"
+        android:textAlignment="center"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/user"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:background="@drawable/botones"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Guest"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"
+        android:maxLength="15"
+        android:singleLine="true"/>
+
+    <Button
+        android:id="@+id/btn_2048"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#8F7A66"
+        android:text="2048"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="10dp" />
+
+    <Button
+        android:id="@+id/btn_lightsOut"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#8F7A66"
+        android:text="Lights Out"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="10dp" />
+
+    <Button
+        android:id="@+id/btn_ranking"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:text="Ranking"
+        android:layout_gravity="center"
+        android:backgroundTint="#8F7A66"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="10dp" />
+
+</LinearLayout>
