@@ -2,8 +2,8 @@ package com.example.gamecenter;
 
 public class Score {
 
-    String player, game;
-    int score;
+    private String player, game;
+    private int score;
 
     public Score(){
 

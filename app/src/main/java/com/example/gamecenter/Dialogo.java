@@ -11,11 +11,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.DialogFragment;
 
-public class Dialogo extends DialogFragment {//   AppCompatDialogFragment
-    String ranking;
-    int puntuacion;
-    TextView txt_score;
-    TextView txt_ranking;
+public class Dialogo extends DialogFragment {
+
+    private String ranking;
+    private int puntuacion;
+    private TextView txt_score;
+    private TextView txt_ranking;
 
     public Dialogo(int puntuacion, String ranking) {
         this.puntuacion = puntuacion;

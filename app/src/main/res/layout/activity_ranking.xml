@@ -21,6 +21,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/titl_ranking_2048"
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -39,11 +40,12 @@
                 android:layout_gravity="center"
                 android:background="@drawable/puntuacion_drawable"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Puntuaciones 2048"
                 android:textColor="@color/white"
                 android:textSize="30dp" />
 
             <TextView
+                android:id="@+id/titl_ranking_lightsOut"
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -62,7 +64,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/puntuacion_drawable"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="Puntuaciones Lights Out"
                 android:textColor="@color/white"
                 android:textSize="30dp" />
         </LinearLayout>

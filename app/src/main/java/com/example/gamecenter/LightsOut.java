@@ -16,19 +16,19 @@ import java.util.ArrayList;
 
 public class LightsOut extends AppCompatActivity implements View.OnClickListener{
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-    int moves;
-    TextView txt_moves;
-    TextView txt_best;
-    Button btn_solution;
-    Button newGame;
-    TextView[][] listaBotones;
-    Boolean[][] listaEncendidos;
-    int nfila_aleatorio;
-    int ncolumna_aleatorio;
-    String[][] solution;
-    Boolean showSolution;
-    String user;
-    DataBase db;
+    private int moves;
+    private TextView txt_moves;
+    private TextView txt_best;
+    private Button btn_solution;
+    private Button newGame;
+    private TextView[][] listaBotones;
+    private Boolean[][] listaEncendidos;
+    private int nfila_aleatorio;
+    private int ncolumna_aleatorio;
+    private String[][] solution;
+    private Boolean showSolution;
+    private String user;
+    private DataBase db;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,11 +38,8 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
         getSupportActionBar().hide();
 
         db = new DataBase(this);
-//        user = "Guest";
         Intent intent = getIntent();
         user = intent.getStringExtra("usuario");
-//        Log.d(LOG_TAG, "USUARIO: " + user);
-
 
         listaEncendidos = new Boolean[5][5];
         listaBotones = new TextView[5][5];
@@ -78,17 +75,12 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
         listaBotones[4][4] = (TextView) findViewById(R.id.btn25);
 
 
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                listaBotones[i][j].setOnClickListener(this);
-                listaEncendidos[i][j] = false;
-            }
-        }
-
         showSolution = false;
         solution = new String[5][5];
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
+                listaBotones[i][j].setOnClickListener(this);
+                listaEncendidos[i][j] = false;
                 solution[i][j] = "";
             }
         }
@@ -105,12 +97,15 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View view) {
                 if(showSolution == false){
-                    moves = moves + 10;
+                    //Añadir penalizacion por usar la solucion
+                    moves = moves + 20;
                     txt_moves.setText("Moves \n "+ moves);
+                    // Notificar al usuario de la penalizacion
                     Toast.makeText(
                             getApplicationContext(),
-                            "PENALTY MOVES +10",
+                            "PENALTY MOVES +20",
                             Toast.LENGTH_SHORT).show();
+                    // Marcar la solucion en los textviews
                     for (int fila = 0; fila < 5; fila++) {
                         for (int columna = 0; columna < 5; columna++) {
                             if(solution[fila][columna].equals("S")){
@@ -120,6 +115,7 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
                     }
                     showSolution = true;
                 }else{
+                    // Borrar la solucion de los textviews
                     for (int fila = 0; fila < 5; fila++) {
                         for (int columna = 0; columna < 5; columna++) {
                             listaBotones[fila][columna].setText("");
@@ -144,12 +140,10 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
     public void encender(TextView[][] btn, Boolean[][] encender, int fila, int columna){
         moves++;
         txt_moves.setText("Moves \n "+ moves);
-//        Drawable fondoApagado = getDrawable(R.drawable.boton_redondo);
         // Compobar si el boton esta encendido
         if(encender[fila][columna]){
             // Apagar boton y apuntarlo en la lista de booleans
             encender[fila][columna] = false;
-//            btn[fila][columna].setBackground(fondoApagado);
             btn[fila][columna].setBackgroundResource(R.drawable.boton_redondo);
             // Enciende o apaga los botones de los alrededores
             encenderAdyacentes(btn, encender, fila, columna);
@@ -159,7 +153,6 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
         else if(!encender[fila][columna]){
             // Encender boton y apuntarlo en la lista de booleans
             encender[fila][columna] = true;
-//            btn[fila][columna].setBackgroundColor(getResources().getColor(R.color.black));
             btn[fila][columna].setBackgroundResource(R.drawable.boton_presionado);
             // Enciende o apaga los botones de los alrededores
             encenderAdyacentes(btn, encender, fila, columna);
@@ -189,21 +182,16 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
     }
 
     public void encenderAdyacentes(TextView[][] btn, Boolean[][] encender, int fila, int columna){
-        Drawable fondoApagado = getDrawable(R.drawable.boton_redondo);
-
-
         // Encender o apagar el boton de abajo
         int filaAbajo = fila+1;
         if(filaAbajo <= 4){ // Comprobar que la fila de abajo no sea mayor de 4
             // Comprobar si esta encendido y apagar el boton
             if(encender[filaAbajo][columna]){
                 encender[filaAbajo][columna] = false;
-//                btn[filaAbajo][columna].setBackground(fondoApagado);
                 btn[filaAbajo][columna].setBackgroundResource(R.drawable.boton_redondo);
             } // Comprobar si esta apagado y encender el boton
             else if(!encender[filaAbajo][columna]){
                 encender[filaAbajo][columna] = true;
-//                btn[filaAbajo][columna].setBackgroundColor(getResources().getColor(R.color.black));
                 btn[filaAbajo][columna].setBackgroundResource(R.drawable.boton_presionado);
             }
         }
@@ -218,7 +206,6 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
             }// Comprobar si esta apagado y encender el boton
             else if(!encender[filaArriba][columna]){
                 encender[filaArriba][columna] = true;
-//                btn[filaArriba][columna].setBackgroundColor(getResources().getColor(R.color.black));
                 btn[filaArriba][columna].setBackgroundResource(R.drawable.boton_presionado);
             }
         }
@@ -233,7 +220,6 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
             }// Comprobar si esta apagado y encender el boton
             else if(!encender[fila][columnaDerecha]){
                 encender[fila][columnaDerecha] = true;
-//                btn[fila][columnaDerecha].setBackgroundColor(getResources().getColor(R.color.black));
                 btn[fila][columnaDerecha].setBackgroundResource(R.drawable.boton_presionado);
             }
         }
@@ -248,7 +234,6 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
             }// Comprobar si esta apagado y encender el boton
             else if(!encender[fila][columnaIzquierda]){
                 encender[fila][columnaIzquierda] = true;
-//                btn[fila][columnaIzquierda].setBackgroundColor(getResources().getColor(R.color.black));
                 btn[fila][columnaIzquierda].setBackgroundResource(R.drawable.boton_presionado);
             }
         }
@@ -278,7 +263,6 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
 
     public void comprobarFin(){
         boolean fin = true;
-        Log.d(LOG_TAG, "------------------------"+"Principio"+"------------------------");
         for (int fila = 0; fila < 5; fila++) {
             for (int columna = 0; columna < 5; columna++) {
                 Log.d(LOG_TAG, "Boton: " + fila + ", " + columna + " : " + listaEncendidos[fila][columna]);
@@ -291,7 +275,6 @@ public class LightsOut extends AppCompatActivity implements View.OnClickListener
                 break;
             }
         }
-        Log.d(LOG_TAG, "------------------------"+"FIN"+"------------------------");
 
         if (fin){
             db.addScore(user,"Light Out", moves);

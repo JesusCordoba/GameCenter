@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class Ranking extends AppCompatActivity {
 
-    TextView r_2048;
-    TextView r_lightsOut;
-    DataBase db;
+    private TextView r_2048;
+    private TextView r_lightsOut;
+    private DataBase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

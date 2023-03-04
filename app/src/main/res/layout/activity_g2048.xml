@@ -9,6 +9,7 @@
     tools:context=".G_2048">
 
     <TextView
+        android:id="@+id/titulo_2048"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -16,7 +17,7 @@
         android:text="2048"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayoutFondo"
         app:layout_constraintEnd_toStartOf="@+id/score" />
 
     <TextView
@@ -63,7 +64,7 @@
         android:textColor="@color/white"
         android:textSize="27sp"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayoutFondo"
         app:layout_constraintEnd_toStartOf="@+id/new_game" />
 
     <Button
@@ -77,11 +78,11 @@
         android:text="@string/new_game"
         android:textColor="@color/white"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout_juego"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout"
+        android:id="@+id/gridLayoutFondo"
         android:layout_width="wrap_content"
         android:background="@drawable/tablero_drawable"
         android:padding="5dp"
@@ -232,7 +233,7 @@
     </androidx.gridlayout.widget.GridLayout>
 
     <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout3"
+        android:id="@+id/gridLayout_juego"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
